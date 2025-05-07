@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Portfolio */
 .project-card {
   border: 1px solid #ccc;

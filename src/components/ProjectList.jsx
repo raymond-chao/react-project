@@ -1,0 +1,52 @@
+import ProjectCard from './ProjectCard';
+import project1Img from '../assets/project1.png';
+import project2Img from '../assets/project2.png';
+import project3Img from '../assets/project3.png';
+
+function ProjectsList() {
+  const projects = [
+    {
+      name: 'My first webpage',
+      image: project1Img,
+      repo: 'https://github.com/raymond-chao/Sundsgarden',
+      tech: ['HTML', 'CSS'],
+      description: 'My cover letter.',
+      purpose: 'Displays my experiences.',
+      learning: 'My first impression of HTML and CSS.',
+      role: 'Solo project',
+      challenges: 'Figuring out HTML and CSS.',
+    },
+    {
+      name: 'Genesis Design',
+      image: project2Img,
+      repo: 'https://github.com/raymond-chao/genesisdesign',
+      tech: ['HTML', 'CSS', 'SASS'],
+      description: 'Had to copy the Figma file and turn it into HTML, CSS, and SASS..',
+      purpose: 'Displays Genesis Design.',
+      learning: 'My first impression of SASS.',
+      role: 'Solo project',
+      challenges: 'Figuring out SASS.',
+    },
+    {
+      name: 'Landing page',
+      image: project3Img,
+      repo: 'https://github.com/raymond-chao/brat-cafe',
+      tech: ['HTML', 'CSS', 'Github'],
+      description: 'Landing page.',
+      purpose: 'Displays our intergalactic café.',
+      learning: 'My first impression of working on a group project.',
+      role: 'Landing page on a group projec',
+      challenges: 'Figuring out Github.',
+    },
+  ];
+
+  return (
+    <div className="projects-list p-4 max-w-4xl mx-auto">
+      {projects.map((proj, i) => (
+        <ProjectCard key={i} {...proj} />
+      ))}
+    </div>
+  );
+}
+
+export default ProjectsList;
