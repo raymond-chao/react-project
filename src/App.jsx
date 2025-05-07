@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Portfolio from "./Pages/Portfolio";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.jsx";
 
 function App() {
   return (
