@@ -1,14 +1,21 @@
-import Project1 from './components/project1';
-import Project2 from './components/project2';
-import Project3 from './components/project3';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Portfolio from "./Pages/Portfolio";
+import Navbar from "./Navbar";
 
 function App() {
   return (
-    <div>
-      <Project1 />
-      <Project2 />
-      <Project3 />
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
