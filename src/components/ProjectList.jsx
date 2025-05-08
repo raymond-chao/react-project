@@ -35,7 +35,7 @@ function ProjectsList({onProjectClick}) {
       description: 'Landing page.',
       purpose: 'Displays our intergalactic café.',
       learning: 'My first impression of working on a group project.',
-      role: 'Landing page on a group projec',
+      role: 'Landing page on a group project',
       challenges: 'Figuring out Github.',
     },
   ];
