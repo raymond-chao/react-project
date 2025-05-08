@@ -41,7 +41,7 @@ function ProjectsList({onProjectClick}) {
   ];
  
   return (
-    <div className="projects-list p-4 max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 max-w-4xl mx-auto">
       {projects.map((proj, i) => (
         <div key={i} onClick={() => onProjectClick(proj)}>
           <ProjectCard {...proj} />

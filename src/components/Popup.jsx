@@ -2,7 +2,6 @@ import React from 'react';
 
 function Popup({ project, onClose }) {
   if (!project) return null;
-
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
