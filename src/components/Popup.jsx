@@ -6,6 +6,7 @@ function Popup({ project, onClose }) {
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
         <h2>{project.name}</h2>
+        <img src={project.image} alt={project.name} className="popup-img" />
         <p><b>Tech Used:</b> {project.tech.join(', ')}</p>
         <p><b>Description:</b> {project.description}</p>
         <p><b>What it Does:</b> {project.purpose}</p>
