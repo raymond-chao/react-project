@@ -1,9 +1,10 @@
+import React from 'react';
 import ProjectCard from './ProjectCard';
 import project1Img from '../assets/project1.png';
 import project2Img from '../assets/project2.png';
 import project3Img from '../assets/project3.png';
 
-function ProjectsList({onProjectClick}) {
+function ProjectsList({ onProjectClick, searchTerm }) {
   const projects = [
     {
       name: 'My first webpage',
@@ -35,14 +36,24 @@ function ProjectsList({onProjectClick}) {
       description: 'Landing page.',
       purpose: 'Displays our intergalactic café.',
       learning: 'My first impression of working on a group project.',
-      role: 'Landing page on a group project',
+      role: 'Landing page on a group projec',
       challenges: 'Figuring out Github.',
     },
   ];
- 
+
+  const filteredProjects = projects.filter((project) => {
+    return (
+      project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.tech.some((tech) =>
+        tech.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  });
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-4 max-w-4xl mx-auto">
-      {projects.map((proj, i) => (
+      {filteredProjects.map((proj, i) => (
         <div key={i} onClick={() => onProjectClick(proj)}>
           <ProjectCard {...proj} />
         </div>
