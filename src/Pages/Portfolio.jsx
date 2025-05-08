@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
-import Project from '../components/ProjectList.jsx';
+import ProjectsList from '../components/ProjectList.jsx';
+import Popup from '../components/Popup.jsx';
 
 function Portfolio() {
-  const [showProjects, setShowProjects] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const handleClick = () => {
-    setShowProjects(prev => !prev);
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closePopup = () => {
+    setSelectedProject(null);
   };
 
   return (
     <div className="flex flex-col items-center p-6">
-      <button
-        onClick={handleClick}
-        className="mb-6 px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-all"
-      >
-        {showProjects ? 'Hide Projects' : 'Preview Projects'}
-      </button>
+      <h1 className="text-3xl font-bold mb-6">My Projects</h1>
 
-      {showProjects && (
-        <div className="w-full max-w-4xl space-y-6">
-          <Project />
-        </div>
+      <div className="w-full max-w-4xl space-y-6">
+        <ProjectsList onProjectClick={handleProjectClick} />
+      </div>
+
+      {selectedProject && (
+        <Popup project={selectedProject} onClose={closePopup} />
       )}
     </div>
   );

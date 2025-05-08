@@ -3,7 +3,7 @@ import project1Img from '../assets/project1.png';
 import project2Img from '../assets/project2.png';
 import project3Img from '../assets/project3.png';
 
-function ProjectsList() {
+function ProjectsList({onProjectClick}) {
   const projects = [
     {
       name: 'My first webpage',
@@ -39,11 +39,13 @@ function ProjectsList() {
       challenges: 'Figuring out Github.',
     },
   ];
-
+ 
   return (
     <div className="projects-list p-4 max-w-4xl mx-auto">
       {projects.map((proj, i) => (
-        <ProjectCard key={i} {...proj} />
+        <div key={i} onClick={() => onProjectClick(proj)}>
+          <ProjectCard {...proj} />
+        </div>
       ))}
     </div>
   );

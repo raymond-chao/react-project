@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import Portfolio from "./Pages/Portfolio";
 import Navbar from "./Navbar.jsx";
 
+
 function App() {
   return (
     <>
